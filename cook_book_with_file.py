@@ -28,9 +28,8 @@ def get_list_to_buy():
 def get_shop_list_by_dishes(dishes, person_count):
     shop_list = {}
     cook_book = get_list_to_buy()
-    cook_book['Фахитос']
-    for dish in cook_book:
-        if dish in dishes:
+    for dish in dishes:
+        if dish in cook_book.keys():
             current_dish = cook_book[dish]
             for ingredient in current_dish:
                 current_ingredient = ingredient['ingredient_name']
@@ -50,7 +49,7 @@ def get_shop_list_by_dishes(dishes, person_count):
 
 
 def runner():
-    shop_list = get_shop_list_by_dishes(['Запеченный картофель', 'Омлет', 'Фахитос'], 2)
+    shop_list = get_shop_list_by_dishes(['Омлет', 'Омлет'], 2)
     print(shop_list)
 
 
